@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Fruitful Life of Christians</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#222;background:#f6f6f6}header{background:#5b005f;color:#fff;padding:10px 5%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:14px}header a{color:#fff;text-decoration:none}.brand{background:#fff;padding:22px 5%;display:flex;align-items:center;gap:28px}.brand img{width:130px;height:130px;object-fit:contain}.brand h1{font-size:clamp(25px,5vw,55px);margin:0;color:#5b005f}.brand h1 span{display:block;color:#111}.brand p{color:#a27600;font-weight:bold}.nav{background:#5b005f;display:flex;justify-content:center;flex-wrap:wrap}.nav a{color:#fff;text-decoration:none;padding:16px 20px;font-weight:bold}.nav a:hover{background:#7b007f}.hero{min-height:390px;background:linear-gradient(90deg,#080008dd,#08000844),url('https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1600&q=80') center/cover;display:flex;align-items:center;color:#fff;padding:45px 7%}.hero h2{font-size:clamp(35px,6vw,65px);margin:10px 0}.hero p{font-size:20px;max-width:700px}.btn{display:inline-block;background:#f2c000;color:#111;padding:12px 20px;border-radius:7px;text-decoration:none;font-weight:bold;border:0}.wrap{max-width:1150px;margin:auto;padding:40px 20px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;padding:22px;border-radius:10px;box-shadow:0 3px 14px #0001}.card h3{color:#5b005f}.admin{background:#201021;color:#fff;border-radius:12px}.admin input,.admin textarea{width:100%;padding:12px;margin:7px 0 12px;border-radius:6px;border:0}.admin textarea{min-height:90px}.hidden{display:none}.footer{background:#25002a;color:#fff;text-align:center;padding:35px}.footer a{color:#fff;margin:0 10px}@media(max-width:750px){.brand{flex-direction:column;text-align:center}.cards{grid-template-columns:1fr}.nav a{padding:12px 10px;font-size:13px}}
+</style></head>
+<body>
+<header><div>📞 <a href="tel:0928006528">0928006528</a></div><div>✉️ <a href="mailto:thefruitfullifeofchristians@gmail.com">thefruitfullifeofchristians@gmail.com</a></div></header>
+<section class="brand"><img src="flc-logo.jpeg" alt="The Fruitful Life of Christians logo"><div><h1>THE FRUITFUL LIFE <span>OF CHRISTIANS</span></h1><p>CHRIST CENTERED • BIBLE BASED • SPIRIT LED</p></div></section>
+<nav class="nav"><a href="#home">HOME</a><a href="#news">NEWS</a><a href="#events">EVENTS</a><a href="#sermons">SERMONS</a><a href="#bible">BIBLE VERSES</a><a href="#gallery">GALLERY</a><a href="#contact">CONTACT</a><a href="#admin">ADMIN</a></nav>
+<section class="hero" id="home"><div><h2>Welcome to The Fruitful Life of Christians</h2><p>A platform for Christian news, events, teachings and inspiration to build faith, hope and love in Christ Jesus.</p><a class="btn" href="#news">READ MORE</a></div></section>
+<section class="wrap" id="news">
+<h2>Latest Christian News</h2>
+<div id="news-status" class="card"><p>Loading latest news…</p></div>
+<div id="news-list" class="cards"></div>
+</section>
+<section class="wrap" id="events"><h2>Upcoming Events</h2><div class="cards"><article class="card"><h3>Worship & Praise Night</h3><p>📅 Friday, May 29 • 6:00 PM – 8:00 PM</p><p>📍 African Hope Mission Church</p></article><article class="card"><h3>Rise & Shine Conference</h3><p>📅 June 18–19, 2026 • 3:00 PM – 5:00 PM</p><p>📍 Light of the Word Church, Mbarara</p></article><article class="card"><h3>Sunday Worship Service</h3><p>Join us for worship, prayer and the Word of God.</p></article></div></section>
+<section class="wrap" id="sermons"><h2>Featured Sermons</h2><div class="cards"><article class="card"><h3>Walking in the Spirit</h3><p>Grow in the Word and learn to live a fruitful Christian life.</p></article><article class="card"><h3>Faith in Difficult Times</h3><p>Encouragement to keep trusting God.</p></article></div></section>
+<section class="wrap" id="bible"><div class="card"><h2>📖 Bible Verse</h2><p><b>Galatians 5:22–23</b></p><p>“But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control.”</p></div></section>
+<section class="wrap" id="gallery"><div class="card"><h2>📸 Gallery</h2><p>Church photos, conferences and Christian activities will appear here.</p></div></section>
+<section class="wrap" id="admin">
+  <div class="admin">
+    <h2>🔐 Admin</h2>
+    <p>Sign in with the Supabase account you use to manage the website.</p>
+    <input id="admin-email" type="email" placeholder="Admin email">
+    <input id="admin-password" type="password" placeholder="Password">
+    <button class="btn" id="login-btn">LOGIN</button>
+    <button class="btn hidden" id="logout-btn">LOG OUT</button>
+    <p id="admin-status"></p>
+
+    <div id="panel" class="hidden">
+      <h3>Content Manager — Add News</h3>
+      <input id="news-title" type="text" placeholder="News title">
+      <input id="news-category" type="text" placeholder="Category">
+      <input id="news-author" type="text" placeholder="Author name">
+      <input id="news-excerpt" type="text" placeholder="Short excerpt">
+      <textarea id="news-content" placeholder="Full news article"></textarea>
+      <input id="news-image" type="file" accept="image/jpeg,image/png,image/webp">
+      <label style="display:block;margin:8px 0 14px;"><input id="news-published" type="checkbox" checked> Publish immediately</label>
+      <button class="btn" id="publish-btn">UPLOAD & PUBLISH NEWS</button>
+      <p id="publish-status"></p>
+    </div>
+  </div>
+</section>
+<footer class="footer" id="contact"><h2>The Fruitful Life of Christians</h2><p>📞 0928006528</p><p>✉️ thefruitfullifeofchristians@gmail.com</p><a href="https://wa.me/211928006528">WhatsApp</a><a href="#home">Back to top</a></footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://hrncnlapdmtzytqbgort.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_qwmPn3fNMqd2OETVzFw7Dg_lAjUhqww";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+const $ = (id) => document.getElementById(id);
+
+function slugify(value) {
+  return value.toLowerCase().trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
+  }[c]));
+}
+
+async function loadNews() {
+  const status = $("news-status");
+  const list = $("news-list");
+  const { data, error } = await supabaseClient
+    .from("news")
+    .select("id,title,slug,excerpt,content,image_url,author_name,category,published,published_at,created_at")
+    .eq("published", true)
+    .order("published_at", { ascending: false });
+
+  if (error) {
+    status.innerHTML = "<p>News could not be loaded yet. Please check the Supabase connection and RLS policies.</p>";
+    console.error(error);
+    return;
+  }
+
+  status.classList.toggle("hidden", data.length > 0);
+
+  list.innerHTML = data.map(article => `
+    <article class="card">
+      ${article.image_url ? `<img src="${escapeHtml(article.image_url)}" alt="${escapeHtml(article.title)}" style="width:100%;height:210px;object-fit:cover;border-radius:8px;margin-bottom:14px;">` : ""}
+      <p style="font-size:12px;color:#a27600;font-weight:bold;">${escapeHtml(article.category || "Christian News")}</p>
+      <h3>${escapeHtml(article.title)}</h3>
+      <p>${escapeHtml(article.excerpt || article.content.slice(0, 180))}</p>
+      ${article.author_name ? `<p><small>By ${escapeHtml(article.author_name)}</small></p>` : ""}
+    </article>
+  `).join("");
+}
+
+async function refreshAdmin() {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  $("panel").classList.toggle("hidden", !session);
+  $("login-btn").classList.toggle("hidden", !!session);
+  $("logout-btn").classList.toggle("hidden", !session);
+  if (session) {
+    $("admin-status").textContent = "Admin signed in.";
+    $("admin-email").value = session.user.email || "";
+  }
+}
+
+$("login-btn").addEventListener("click", async () => {
+  const email = $("admin-email").value.trim();
+  const password = $("admin-password").value;
+  $("admin-status").textContent = "Signing in…";
+
+  const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+  if (error) {
+    $("admin-status").textContent = "Login failed: " + error.message;
+    return;
+  }
+  $("admin-status").textContent = "Login successful.";
+  await refreshAdmin();
+});
+
+$("logout-btn").addEventListener("click", async () => {
+  await supabaseClient.auth.signOut();
+  $("admin-status").textContent = "Logged out.";
+  await refreshAdmin();
+});
+
+$("publish-btn").addEventListener("click", async () => {
+  const title = $("news-title").value.trim();
+  const content = $("news-content").value.trim();
+  const file = $("news-image").files[0];
+
+  if (!title || !content) {
+    $("publish-status").textContent = "Please enter a title and the full article.";
+    return;
+  }
+
+  $("publish-status").textContent = "Saving…";
+
+  const slug = slugify(title) + "-" + Date.now();
+  let imagePath = null;
+  let imageUrl = null;
+
+  if (file) {
+    const ext = file.name.split(".").pop().toLowerCase();
+    if (!["jpg", "jpeg", "png", "webp"].includes(ext)) {
+      $("publish-status").textContent = "Please use JPG, PNG, or WebP images.";
+      return;
+    }
+
+    const filePath = `articles/${new Date().getFullYear()}/${String(new Date().getMonth()+1).padStart(2,"0")}/${crypto.randomUUID()}.${ext}`;
+
+    const { error: uploadError } = await supabaseClient
+      .storage.from("news")
+      .upload(filePath, file, {
+        cacheControl: "3600",
+        upsert: false,
+        contentType: file.type
+      });
+
+    if (uploadError) {
+      $("publish-status").textContent = "Image upload failed: " + uploadError.message;
+      return;
+    }
+
+    imagePath = filePath;
+    imageUrl = supabaseClient.storage.from("news").getPublicUrl(filePath).data.publicUrl;
+  }
+
+  const { error } = await supabaseClient.from("news").insert({
+    title,
+    slug,
+    excerpt: $("news-excerpt").value.trim() || null,
+    content,
+    image_path: imagePath,
+    image_url: imageUrl,
+    author_name: $("news-author").value.trim() || null,
+    category: $("news-category").value.trim() || "Christian News",
+    published: $("news-published").checked,
+    published_at: $("news-published").checked ? new Date().toISOString() : null
+  });
+
+  if (error) {
+    $("publish-status").textContent = "Article save failed: " + error.message;
+    return;
+  }
+
+  $("publish-status").textContent = "News article saved successfully.";
+  ["news-title","news-category","news-author","news-excerpt","news-content"].forEach(id => $(id).value = "");
+  $("news-image").value = "";
+  await loadNews();
+});
+
+supabaseClient.auth.onAuthStateChange(() => refreshAdmin());
+loadNews();
+refreshAdmin();
+</script>
+
+</body></html>
